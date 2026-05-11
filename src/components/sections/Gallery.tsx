@@ -104,6 +104,13 @@ function VideoCard({
   const label = lang === 'ar' ? video.labelAr : lang === 'en' ? video.labelEn : video.labelFr;
   const desc = lang === 'ar' ? video.descAr : lang === 'en' ? video.descEn : video.descFr;
 
+  const handleLoadedData = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.pause();
+    }
+  };
+
   const handleMouseEnter = () => {
     if (videoRef.current) {
       videoRef.current.play().catch(() => {});
@@ -131,16 +138,15 @@ function VideoCard({
         onMouseLeave={handleMouseLeave}
         onClick={() => setModalOpen(true)}
       >
-        {/* Video / Poster */}
         <video
           ref={videoRef}
           src={video.src}
-          poster={video.poster}
           muted
           playsInline
           loop
-          preload="none"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          preload="metadata"
+          onLoadedData={handleLoadedData}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
         {/* Overlay gradient */}
