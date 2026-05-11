@@ -9,7 +9,7 @@ export function Testimonial() {
     <section className="bg-brand-beige text-brand-dark relative overflow-hidden border-y border-brand-darker/5">
       <div className={`max-w-none lg:grid lg:grid-cols-[0.68fr_1.32fr] lg:min-h-[720px] ${isRTL ? 'lg:[direction:rtl]' : ''}`}>
         {/* Left image panel */}
-        <div className="relative min-h-[420px] lg:min-h-[720px]">
+        <div className="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[720px]">
           <img
             src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80"
             alt="Patiente satisfaite"
@@ -19,7 +19,7 @@ export function Testimonial() {
         </div>
 
         {/* Right content panel */}
-        <div className="relative flex items-center py-20 lg:py-24 bg-brand-beige">
+        <div className="relative z-10 -mt-14 sm:-mt-16 lg:mt-0 flex items-center py-14 sm:py-16 lg:py-24 bg-brand-beige rounded-t-[2.2rem] sm:rounded-t-[2.6rem] lg:rounded-none shadow-[0_-14px_36px_rgba(26,22,16,0.14)] lg:shadow-none">
           {/* Vertical gradient barrier between image and text */}
           <div
             className={`hidden lg:block absolute top-0 bottom-0 w-24 pointer-events-none ${isRTL ? '-right-12' : '-left-12'}`}
