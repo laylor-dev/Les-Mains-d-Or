@@ -129,6 +129,81 @@ h1, h2, h3, h4, h5, h6 {
   color: transparent;
 }
 
+@keyframes logo-loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logo-loader-float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-3px) scale(1.03); }
+}
+
+.logo-loader-ring {
+  transform-origin: 110px 110px;
+  animation: logo-loader-spin 1.9s linear infinite;
+}
+
+.logo-loader-image {
+  transform-origin: 110px 110px;
+  animation: logo-loader-float 2.6s ease-in-out infinite;
+}
+
+.logo-loader-shell {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  transition: opacity 520ms cubic-bezier(0.22, 1, 0.36, 1), filter 520ms cubic-bezier(0.22, 1, 0.36, 1), transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo-loader-shell.is-exiting {
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(1.018);
+}
+
+.logo-loader-content {
+  animation: logo-loader-enter 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.logo-loader-track {
+  opacity: 0.55;
+  animation: logo-loader-track-pulse 2.5s ease-in-out infinite;
+}
+
+.logo-loader-title {
+  animation: logo-loader-title-rise 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.logo-loader-ambient {
+  position: absolute;
+  width: min(58vw, 420px);
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(196, 164, 74, 0.18) 0%, rgba(196, 164, 74, 0.08) 42%, rgba(240, 234, 216, 0) 74%);
+  filter: blur(6px);
+  animation: logo-loader-ambient-breathe 3.2s ease-in-out infinite;
+}
+
+@keyframes logo-loader-enter {
+  0% { opacity: 0; transform: translateY(8px) scale(0.972); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes logo-loader-title-rise {
+  0% { opacity: 0; transform: translateY(4px); letter-spacing: 0.03em; }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: 0.02em; }
+}
+
+@keyframes logo-loader-track-pulse {
+  0%, 100% { opacity: 0.42; }
+  50% { opacity: 0.72; }
+}
+
+@keyframes logo-loader-ambient-breathe {
+  0%, 100% { transform: scale(0.94); opacity: 0.8; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+
 /* Gold gradient utility */
 .bg-gold-gradient {
   background: linear-gradient(135deg, #c4a44a 0%, #f0d080 50%, #a88c38 100%);
