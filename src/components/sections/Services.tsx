@@ -25,7 +25,9 @@ export function Services() {
   const services: { title: string; subtitle: string }[] = t('services');
 
   return (
-    <section id="services" className="bg-brand-darker py-24 lg:py-32 px-4 md:px-8">
+    <section id="services" className="bg-brand-darker py-24 lg:py-32 px-4 md:px-8 relative overflow-hidden">
+      <div className={`logo-watermark w-44 h-44 ${isRTL ? 'right-8' : 'left-8'} top-12 opacity-[0.05]`} />
+      <div className={`logo-watermark w-64 h-64 ${isRTL ? 'left-10' : 'right-10'} bottom-8 opacity-[0.04]`} />
       <div className={`max-w-7xl mx-auto mb-16 flex flex-col md:flex-row items-end justify-between gap-8 ${isRTL ? 'md:flex-row-reverse text-right' : ''}`}>
         <div>
           <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-primary mb-4 font-semibold flex items-center gap-4">

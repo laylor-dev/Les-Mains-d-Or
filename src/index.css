@@ -146,3 +146,16 @@ h1, h2, h3, h4, h5, h6 {
 .video-overlay {
   background: linear-gradient(to top, rgba(26, 22, 16, 0.95) 0%, rgba(26, 22, 16, 0.3) 50%, transparent 100%);
 }
+
+/* Subtle premium logo watermark */
+.logo-watermark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  background-image: url('/Assets/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.06;
+  filter: grayscale(10%) saturate(60%);
+}

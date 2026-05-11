@@ -10,6 +10,8 @@ export function Intro() {
       {/* Decorative bg */}
       <div className={`absolute top-0 ${isRTL ? 'left-0' : 'right-0'} w-1/3 h-full bg-brand-beige/30 ${isRTL ? 'rounded-br-full' : 'rounded-bl-full'} z-0 opacity-50`} />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className={`logo-watermark w-40 h-40 ${isRTL ? 'right-10' : 'left-10'} top-20`} />
+      <div className={`logo-watermark w-56 h-56 ${isRTL ? 'left-8' : 'right-8'} bottom-10 opacity-[0.045]`} />
 
       <div className={`max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10 ${isRTL ? 'lg:flex-row-reverse text-right' : ''}`}>
 
@@ -105,18 +107,6 @@ export function Intro() {
             transition={{ delay: 0.8 }}
             className={`absolute ${isRTL ? '-left-6 lg:-left-12' : '-right-6 lg:-right-12'} bottom-20 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-float`}
           />
-
-          {/* Badge overlay */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="absolute bottom-4 right-4 glass rounded-full px-4 py-2 flex items-center gap-2"
-          >
-            <span className="text-primary text-base">✨</span>
-            <span className="text-white/80 text-[9px] uppercase tracking-widest">Les Mains d'Or</span>
-          </motion.div>
         </div>
       </div>
     </section>

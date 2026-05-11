@@ -50,7 +50,9 @@ export function Gallery() {
   const { t, lang, isRTL } = useLang();
 
   return (
-    <section id="gallery" className="bg-brand-light py-24 lg:py-32 px-4 md:px-8">
+    <section id="gallery" className="bg-brand-light py-24 lg:py-32 px-4 md:px-8 relative overflow-hidden">
+      <div className={`logo-watermark w-40 h-40 ${isRTL ? 'left-8' : 'right-8'} top-16`} />
+      <div className={`logo-watermark w-56 h-56 ${isRTL ? 'right-12' : 'left-12'} bottom-10 opacity-[0.045]`} />
       {/* Header */}
       <div className={`max-w-7xl mx-auto mb-16 flex flex-col md:flex-row items-end justify-between gap-8 ${isRTL ? 'md:flex-row-reverse text-right' : ''}`}>
         <div>

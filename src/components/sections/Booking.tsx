@@ -40,6 +40,8 @@ export function Booking() {
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary rounded-full blur-[150px]" />
       </div>
+      <div className={`logo-watermark w-40 h-40 ${isRTL ? 'right-8' : 'left-8'} top-10 opacity-[0.06]`} />
+      <div className={`logo-watermark w-64 h-64 ${isRTL ? 'left-4' : 'right-4'} bottom-4 opacity-[0.04]`} />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className={`flex flex-col lg:flex-row gap-16 items-start ${isRTL ? 'lg:flex-row-reverse text-right' : ''}`}>
