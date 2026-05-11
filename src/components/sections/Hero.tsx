@@ -11,8 +11,13 @@ export function Hero() {
       {/* Background image with smooth scale animation */}
       <motion.div
         className="absolute inset-0 w-full h-full transform-gpu origin-center"
-        animate={{ scale: 1.05 }}
-        transition={{ duration: 20, ease: 'linear', repeat: Infinity, repeatType: 'reverse' }}
+        initial={{ opacity: 0, scale: 1.12, filter: 'blur(10px)' }}
+        animate={{ opacity: 1, filter: 'blur(0px)', scale: [1.05, 1.075, 1.05] }}
+        transition={{
+          opacity: { duration: 1.35, ease: [0.22, 1, 0.36, 1] },
+          filter: { duration: 1.35, ease: [0.22, 1, 0.36, 1] },
+          scale: { duration: 18, ease: 'easeInOut', repeat: Infinity },
+        }}
       >
         <img
           src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80"

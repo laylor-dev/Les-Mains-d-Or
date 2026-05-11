@@ -90,12 +90,12 @@ export function Intro() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
-            className={`w-[50%] h-[45%] absolute ${isRTL ? 'right-0' : 'left-0'} bottom-10 z-10 border-4 md:border-8 border-brand-light shadow-2xl overflow-hidden group`}
+            className={`w-[42%] aspect-[3/4] absolute ${isRTL ? 'right-0' : 'left-0'} bottom-10 z-10 border-4 md:border-8 border-brand-light shadow-2xl overflow-hidden group bg-brand-light`}
           >
             <img
               src="/Assets/results_small.png"
               alt="Les Mains d'Or Results"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+              className="w-full h-full object-contain object-center transition-transform duration-1000"
             />
           </motion.div>
 
